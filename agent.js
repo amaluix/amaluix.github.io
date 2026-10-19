@@ -7,6 +7,7 @@ const transcript = document.querySelector('#agent-messages');
 const status = document.querySelector('#agent-status');
 const send = form.querySelector('button');
 const live = document.body.dataset.agentMode === 'gemini';
+const chatEndpoint = document.body.dataset.agentEndpoint || '/api/chat';
 const history = [];
 let controller;
 let opener;
@@ -93,7 +94,7 @@ form.addEventListener('submit', async event => {
   controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), 20000);
   try {
-    const response = await fetch('/api/chat', {
+    const response = await fetch(chatEndpoint, {
       method: 'POST', headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ message: question, history: history.slice(-8) }), signal: controller.signal
     });
