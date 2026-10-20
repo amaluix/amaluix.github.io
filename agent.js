@@ -1,4 +1,4 @@
-import { localAnswer } from './assets/portfolio-knowledge.mjs?v=20261019-8';
+import { localAnswer } from './assets/portfolio-knowledge.mjs?v=20261021-2';
 
 const panel = document.querySelector('#agent-dialog');
 const form = document.querySelector('#agent-form');
@@ -29,7 +29,8 @@ function addMessage(role, text, source) {
   item.append(label, body);
   if (source) {
     const link = document.createElement('a');
-    link.href = source.link;
+    const destination = document.querySelector(source.link);
+    link.href = destination ? source.link : '/' + source.link;
     link.textContent = `${source.label} ↗`;
     link.addEventListener('click', () => {
       opener = null;
@@ -92,7 +93,7 @@ form.addEventListener('submit', async event => {
   }
   status.textContent = 'Thinking…';
   controller = new AbortController();
-  const timeout = setTimeout(() => controller.abort(), 20000);
+  const timeout = setTimeout(() => controller.abort(), 50000);
   try {
     const response = await fetch(chatEndpoint, {
       method: 'POST', headers: { 'Content-Type': 'application/json' },

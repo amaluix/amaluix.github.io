@@ -394,3 +394,69 @@ audio { display: block; width: 100%; min-width: 0; height: 44px; }
  .project-connect { display: block; }
  .project-connect > .project-image { margin-bottom: 23px; }
 }
+
+/* Service detail pages keep the portfolio's type and palette. */
+.service-index { list-style: none; padding: 0; margin: 0; display: grid; gap: 18px; }
+.service-index a { display: grid; grid-template-columns: 1fr 1.5fr auto; gap: 36px; align-items: start; padding: 30px; background: var(--chalk); }
+.service-index a:hover { background: var(--sage); }
+.service-index h3 { font-size: 25px; }
+.service-index p { max-width: 62ch; }
+.service-layout { display: grid; grid-template-columns: 1fr 1.05fr; gap: 8%; align-items: start; padding-block: 55px 100px; }
+.service-proof { position: sticky; top: 125px; }
+.service-diagram { padding: clamp(28px, 3vw, 48px); background: var(--sage); min-height: 340px; display: flex; flex-direction: column; justify-content: center; gap: 25px; }
+.service-diagram-title { font-size: clamp(28px, 3vw, 40px); line-height: 1.16; letter-spacing: -.035em; }
+.service-diagram-title.secondary { margin-top: 22px; }
+.service-proof h2 { margin-top: 28px; font-size: 25px; line-height: 1.2; letter-spacing: -.03em; }
+.service-proof > p { margin-top: 15px; font-size: 16px; }
+.service-diagram audio { width: 100%; }
+.service-reading { min-width: 0; }
+.breadcrumbs { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 30px; font-size: 14px; }
+.breadcrumbs a { text-decoration: underline; padding-block: 8px; }
+.service-reading h1 { font-size: clamp(36px, 3.6vw, 52px); line-height: 1.08; }
+.service-reading > p { margin-top: 24px; }
+.service-reading .service-lead { font-size: 21px; }
+.service-reading > .button { margin-top: 28px; }
+.service-section { margin-top: 72px; }
+.service-section h2 { font-size: 30px; line-height: 1.14; letter-spacing: -.035em; margin-bottom: 24px; }
+.service-section p + p { margin-top: 20px; }
+.service-section ul { padding-left: 22px; margin-block: 24px 0; }
+.service-section li + li { margin-top: 15px; }
+.service-section .text-link { margin-top: 12px; display: block; }
+.service-faq details { margin-top: 20px; }
+.service-faq summary { cursor: pointer; font-size: 20px; padding-block: 12px; }
+.service-faq details p { margin: 10px 0 24px; }
+.service-close { background: var(--pine); color: var(--paper); padding-block: 80px; }
+.service-close-inner { display: grid; grid-template-columns: 1.2fr 1fr; gap: 12%; }
+.service-close h2 { font-size: clamp(34px, 4vw, 52px); }
+.service-close p { margin-top: 22px; max-width: 55ch; }
+.service-close .button { margin-top: 28px; }
+.service-close h3 { font-size: 25px; }
+.service-related { display: grid; gap: 12px; margin-block: 25px; }
+.service-related a { padding-block: 8px; text-decoration: underline; }
+.service-close .ask-work { color: var(--paper); padding-block: 10px; }
+.service-close .agent-feature-note { font-size: 14px; }
+.service-close :focus-visible { outline-color: var(--accent); }
+.service-footer { display: flex; flex-wrap: wrap; gap: 20px 28px; padding-block: 32px; font-size: 16px; }
+.service-footer p { margin-right: auto; }
+.service-footer a { text-decoration: underline; }
+@media (max-width: 900px) {
+  .service-layout { gap: 5%; grid-template-columns: .9fr 1.1fr; }
+  .service-diagram { padding: 26px; }
+  .service-index a { grid-template-columns: 1fr 1.4fr auto; gap: 22px; }
+}
+@media (max-width: 760px) {
+  .service-layout { display: flex; flex-direction: column; padding-top: 25px; gap: 55px; }
+  .service-reading { order: 0; width: 100%; }
+  .service-proof { order: 1; position: static; width: 100%; }
+  .service-reading h1 { font-size: 36px; }
+  .service-reading .service-lead { font-size: 20px; }
+  .service-section { margin-top: 55px; }
+  .service-section h2 { font-size: 28px; }
+  .service-close-inner { grid-template-columns: 1fr; gap: 55px; }
+  .service-index a { grid-template-columns: 1fr auto; padding: 24px; gap: 14px; }
+  .service-index p { grid-column: 1; }
+  .service-index a > span { grid-column: 2; grid-row: 1; }
+  .service-index h3 { font-size: 24px; }
+  .service-directory h2 { font-size: 36px; }
+  .service-footer p { flex-basis: 100%; }
+}

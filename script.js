@@ -26,7 +26,8 @@ if (header && toggle && navigation) {
     if (!link || !mobile.matches) return;
     setMenu(false);
     // Move keyboard focus out of the now-hidden navigation to the destination.
-    const destination = document.querySelector(link.getAttribute('href'));
+    const href = link.getAttribute('href');
+    const destination = href?.startsWith('#') ? document.querySelector(href) : null;
     if (destination) {
       destination.setAttribute('tabindex', '-1');
       destination.focus({ preventScroll: true });

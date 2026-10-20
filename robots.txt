@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://amaluix.github.io/sitemap.xml
+Disallow: /api/
+Sitemap: https://madeofsystems.me/sitemap.xml
